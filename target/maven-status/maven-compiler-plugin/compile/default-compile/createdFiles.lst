@@ -1,0 +1,16 @@
+com\beuticlick\entity\InventoryStock.class
+com\beuticlick\repository\BillingRepo.class
+com\beuticlick\entity\BillingEntity.class
+com\beuticlick\service\AppointmentService.class
+com\beuticlick\controller\CustomerController.class
+com\beuticlick\repository\AppointmentRepo.class
+com\beuticlick\repository\CustomerRepository.class
+com\beuticlick\entity\Customer.class
+com\beuticlick\repository\InventoryStockRepository.class
+com\beuticlick\entity\Product.class
+com\beuticlick\constant\StatusEnum.class
+com\beuticlick\BeutiClickApplication.class
+com\beuticlick\entity\Appointment.class
+com\beuticlick\entity\BaseSalonEntity.class
+com\beuticlick\service\CustomerService.class
+com\beuticlick\service\InventoryService.class

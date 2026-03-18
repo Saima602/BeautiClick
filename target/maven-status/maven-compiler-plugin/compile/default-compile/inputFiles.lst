@@ -1,0 +1,16 @@
+E:\Beuticlick\beuticlick-backend\src\main\java\com\beuticlick\BeutiClickApplication.java
+E:\Beuticlick\beuticlick-backend\src\main\java\com\beuticlick\entity\BaseSalonEntity.java
+E:\Beuticlick\beuticlick-backend\src\main\java\com\beuticlick\entity\Appointment.java
+E:\Beuticlick\beuticlick-backend\src\main\java\com\beuticlick\constant\StatusEnum.java
+E:\Beuticlick\beuticlick-backend\src\main\java\com\beuticlick\entity\InventoryStock.java
+E:\Beuticlick\beuticlick-backend\src\main\java\com\beuticlick\entity\Customer.java
+E:\Beuticlick\beuticlick-backend\src\main\java\com\beuticlick\entity\BillingEntity.java
+E:\Beuticlick\beuticlick-backend\src\main\java\com\beuticlick\repository\InventoryStockRepository.java
+E:\Beuticlick\beuticlick-backend\src\main\java\com\beuticlick\repository\BillingRepo.java
+E:\Beuticlick\beuticlick-backend\src\main\java\com\beuticlick\entity\Product.java
+E:\Beuticlick\beuticlick-backend\src\main\java\com\beuticlick\service\CustomerService.java
+E:\Beuticlick\beuticlick-backend\src\main\java\com\beuticlick\controller\CustomerController.java
+E:\Beuticlick\beuticlick-backend\src\main\java\com\beuticlick\service\InventoryService.java
+E:\Beuticlick\beuticlick-backend\src\main\java\com\beuticlick\service\AppointmentService.java
+E:\Beuticlick\beuticlick-backend\src\main\java\com\beuticlick\repository\AppointmentRepo.java
+E:\Beuticlick\beuticlick-backend\src\main\java\com\beuticlick\repository\CustomerRepository.java

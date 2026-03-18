@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@beauticlickdb_high?TNS_ADMIN=E:/oracle/wallet
+    username: ADMIN
+    password: Hellorj@1234
+    driver-class-name: oracle.jdbc.OracleDriver
+   
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect
+
