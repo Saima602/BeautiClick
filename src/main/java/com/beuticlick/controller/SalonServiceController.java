@@ -1,67 +1,68 @@
 package com.beuticlick.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.web.bind.annotation.*;
 
-import com.beuticlick.entity.SalonService;
+import com.beuticlick.dto.DtoMapper;
+import com.beuticlick.dto.request.SalonServiceRequest;
+import com.beuticlick.dto.response.SalonServiceResponse;
+import com.beuticlick.security.SecurityUtils;
 import com.beuticlick.service.SalonServiceService;
 
+import jakarta.validation.Valid;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 
 @RestController
+@SecurityRequirement(name = "bearerAuth")
 @RequestMapping("/services")
 @RequiredArgsConstructor
 public class SalonServiceController {
 
     private final SalonServiceService service;
 
-    // POST /services — add a new treatment/service
     @PostMapping
-    public SalonService create(@RequestBody SalonService salonService,
-                               @RequestHeader("salonId") Long salonId) {
-        return service.create(salonService, salonId);
+    public SalonServiceResponse create(@Valid @RequestBody SalonServiceRequest request) {
+        return DtoMapper.toResponse(
+            service.create(DtoMapper.toEntity(request), SecurityUtils.currentSalonId())
+        );
     }
 
-    // GET /services — all services for this salon (including inactive)
     @GetMapping
-    public List<SalonService> getAll(@RequestHeader("salonId") Long salonId) {
-        return service.getAll(salonId);
+    public List<SalonServiceResponse> getAll() {
+        return service.getAll(SecurityUtils.currentSalonId()).stream()
+            .map(DtoMapper::toResponse).collect(Collectors.toList());
     }
 
-    // GET /services/active — only bookable services (shown to customers)
     @GetMapping("/active")
-    public List<SalonService> getActive(@RequestHeader("salonId") Long salonId) {
-        return service.getActive(salonId);
+    public List<SalonServiceResponse> getActive() {
+        return service.getActive(SecurityUtils.currentSalonId()).stream()
+            .map(DtoMapper::toResponse).collect(Collectors.toList());
     }
 
-    // GET /services/category/{category} — filter by category e.g. "Hair", "Nails"
     @GetMapping("/category/{category}")
-    public List<SalonService> getByCategory(@PathVariable String category,
-                                            @RequestHeader("salonId") Long salonId) {
-        return service.getByCategory(salonId, category);
+    public List<SalonServiceResponse> getByCategory(@PathVariable String category) {
+        return service.getByCategory(SecurityUtils.currentSalonId(), category).stream()
+            .map(DtoMapper::toResponse).collect(Collectors.toList());
     }
 
-    // GET /services/{id}
     @GetMapping("/{id}")
-    public SalonService getById(@PathVariable Long id,
-                                @RequestHeader("salonId") Long salonId) {
-        return service.getById(id, salonId);
+    public SalonServiceResponse getById(@PathVariable Long id) {
+        return DtoMapper.toResponse(service.getById(id, SecurityUtils.currentSalonId()));
     }
 
-    // PUT /services/{id} — update price, duration, name etc.
     @PutMapping("/{id}")
-    public SalonService update(@PathVariable Long id,
-                               @RequestBody SalonService salonService,
-                               @RequestHeader("salonId") Long salonId) {
-        return service.update(id, salonService, salonId);
+    public SalonServiceResponse update(@PathVariable Long id,
+                                       @Valid @RequestBody SalonServiceRequest request) {
+        return DtoMapper.toResponse(
+            service.update(id, DtoMapper.toEntity(request), SecurityUtils.currentSalonId())
+        );
     }
 
-    // DELETE /services/{id} — soft deletes (marks inactive, row kept for billing history)
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id,
-                       @RequestHeader("salonId") Long salonId) {
-        service.delete(id, salonId);
+    public void delete(@PathVariable Long id) {
+        service.delete(id, SecurityUtils.currentSalonId());
     }
-
 }

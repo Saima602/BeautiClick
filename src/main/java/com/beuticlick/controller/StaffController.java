@@ -1,60 +1,61 @@
 package com.beuticlick.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.web.bind.annotation.*;
 
-import com.beuticlick.entity.Staff;
+import com.beuticlick.dto.DtoMapper;
+import com.beuticlick.dto.request.StaffRequest;
+import com.beuticlick.dto.response.StaffResponse;
+import com.beuticlick.security.SecurityUtils;
 import com.beuticlick.service.StaffService;
 
+import jakarta.validation.Valid;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 
 @RestController
+@SecurityRequirement(name = "bearerAuth")
 @RequestMapping("/staff")
 @RequiredArgsConstructor
 public class StaffController {
 
     private final StaffService service;
 
-    // POST /staff — add a new staff member
     @PostMapping
-    public Staff create(@RequestBody Staff staff,
-                        @RequestHeader("salonId") Long salonId) {
-        return service.create(staff, salonId);
+    public StaffResponse create(@Valid @RequestBody StaffRequest request) {
+        return DtoMapper.toResponse(
+            service.create(DtoMapper.toEntity(request), SecurityUtils.currentSalonId())
+        );
     }
 
-    // GET /staff — all staff for this salon
     @GetMapping
-    public List<Staff> getAll(@RequestHeader("salonId") Long salonId) {
-        return service.getAll(salonId);
+    public List<StaffResponse> getAll() {
+        return service.getAll(SecurityUtils.currentSalonId()).stream()
+            .map(DtoMapper::toResponse).collect(Collectors.toList());
     }
 
-    // GET /staff/available — only staff currently taking appointments
     @GetMapping("/available")
-    public List<Staff> getAvailable(@RequestHeader("salonId") Long salonId) {
-        return service.getAvailable(salonId);
+    public List<StaffResponse> getAvailable() {
+        return service.getAvailable(SecurityUtils.currentSalonId()).stream()
+            .map(DtoMapper::toResponse).collect(Collectors.toList());
     }
 
-    // GET /staff/{id} — single staff member
     @GetMapping("/{id}")
-    public Staff getById(@PathVariable Long id,
-                         @RequestHeader("salonId") Long salonId) {
-        return service.getById(id, salonId);
+    public StaffResponse getById(@PathVariable Long id) {
+        return DtoMapper.toResponse(service.getById(id, SecurityUtils.currentSalonId()));
     }
 
-    // PUT /staff/{id} — update details or toggle availability
     @PutMapping("/{id}")
-    public Staff update(@PathVariable Long id,
-                        @RequestBody Staff staff,
-                        @RequestHeader("salonId") Long salonId) {
-        return service.update(id, staff, salonId);
+    public StaffResponse update(@PathVariable Long id, @Valid @RequestBody StaffRequest request) {
+        return DtoMapper.toResponse(
+            service.update(id, DtoMapper.toEntity(request), SecurityUtils.currentSalonId())
+        );
     }
 
-    // DELETE /staff/{id}
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id,
-                       @RequestHeader("salonId") Long salonId) {
-        service.delete(id, salonId);
+    public void delete(@PathVariable Long id) {
+        service.delete(id, SecurityUtils.currentSalonId());
     }
-
 }
