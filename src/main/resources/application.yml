@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:oracle:thin:@beauticlickdb_high?TNS_ADMIN=E:/oracle/wallet
+    url: ${DB_URL}
     username: ADMIN
-    password: Hellorj@1234
+    password: ${DB_PASSWORD}
     driver-class-name: oracle.jdbc.OracleDriver
    
 

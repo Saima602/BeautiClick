@@ -30,6 +30,10 @@ public class Appointment extends BaseSalonEntity {
 
 	private LocalDateTime appointmentTime;
 
+	// Captured at booking time so billing is always accurate even if price changes
+	// later
+	private Double servicePrice;
+
 	@Enumerated(EnumType.STRING)
 	private StatusEnum status;
 }
