@@ -1,6 +1,7 @@
 package com.beuticlick.dto.request;
 
 import com.beuticlick.constant.Role;
+import com.beuticlick.dto.SalonModel;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -13,20 +14,20 @@ import lombok.Setter;
 @Setter
 public class RegisterRequest {
 
-    @NotBlank(message = "Name is required")
-    private String name;
+	@NotBlank(message = "Name is required")
+	private String name;
 
-    @NotBlank(message = "Email is required")
-    @Email(message = "Invalid email format")
-    private String email;
+	@NotBlank(message = "Email is required")
+	@Email(message = "Invalid email format")
+	private String email;
 
-    @NotBlank(message = "Password is required")
-    @Size(min = 8, message = "Password must be at least 8 characters")
-    private String password;
+	@NotBlank(message = "Password is required")
+	@Size(min = 8, message = "Password must be at least 8 characters")
+	private String password;
 
-    @NotNull(message = "Role is required")
-    private Role role;
+	@NotNull(message = "Role is required")
+	private Role role;
 
-    // Required for SALON_ADMIN and STAFF — which salon they belong to
-    private Long salonId;
+	// Required for SALON_ADMIN and STAFF — which salon they belong to
+	private SalonModel salon;
 }

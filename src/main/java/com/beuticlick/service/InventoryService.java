@@ -3,6 +3,7 @@ package com.beuticlick.service;
 import org.springframework.stereotype.Service;
 
 import com.beuticlick.entity.InventoryStock;
+import com.beuticlick.entity.Product;
 import com.beuticlick.repository.InventoryStockRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -13,13 +14,14 @@ public class InventoryService {
 
 	private final InventoryStockRepository stockRepo;
 
-	public void addStock(Long productId, int qty, Long salonId) {
+	public void addStock(Product product, int qty, Long salonId) {
 		// If no stock record exists yet for this product, create one (upsert behaviour)
-		InventoryStock stock = stockRepo.findByProductIdAndSalonId(productId, salonId);
+		InventoryStock stock = stockRepo.findByProductIdAndSalonId(product.getId(), salonId);
 
 		if (stock == null) {
 			stock = new InventoryStock();
-			stock.setProductId(productId);
+
+			stock.setProduct(product);
 			stock.setSalonId(salonId);
 			stock.setQuantityAvailable(0);
 		}

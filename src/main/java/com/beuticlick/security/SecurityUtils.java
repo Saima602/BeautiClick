@@ -7,19 +7,19 @@ import com.beuticlick.exception.AccessDeniedException;
 
 public class SecurityUtils {
 
-    public static User currentUser() {
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if (principal instanceof User user) {
-            return user;
-        }
-        throw new AccessDeniedException("User", 0L, 0L);
-    }
+	public static User currentUser() {
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if (principal instanceof User user) {
+			return user;
+		}
+		throw new AccessDeniedException("User", 0L, 0L);
+	}
 
-    public static Long currentSalonId() {
-        return currentUser().getSalonId();
-    }
+	public static Long currentSalonId() {
+		return currentUser().getSalon().getId();
+	}
 
-    public static String currentEmail() {
-        return currentUser().getEmail();
-    }
+	public static String currentEmail() {
+		return currentUser().getEmail();
+	}
 }

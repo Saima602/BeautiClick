@@ -4,6 +4,15 @@ spring:
     username: ADMIN
     password: ${DB_PASSWORD}
     driver-class-name: oracle.jdbc.OracleDriver
+    
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      pool-name: BeautiClickHikariPool
+      register-mbeans: true  
    
 
   jpa:
@@ -12,6 +21,8 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.OracleDialect
+        
+         
         
 jwt:
    secret: ${JWT_SECRET}

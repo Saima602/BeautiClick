@@ -19,54 +19,44 @@ import io.jsonwebtoken.security.Keys;
 @Service
 public class JwtService {
 
-    @Value("${jwt.secret}")
-    private String secret;
+	@Value("${jwt.secret}")
+	private String secret;
 
-    @Value("${jwt.expiration-ms}")
-    private long expirationMs;
+	@Value("${jwt.expiration-ms}")
+	private long expirationMs;
 
-    public String generateToken(User user) {
-        return Jwts.builder()
-            .subject(user.getEmail())
-            .claim("role", user.getRole().name())
-            .claim("salonId", user.getSalonId())
-            .claim("userId", user.getId())
-            .issuedAt(new Date())
-            .expiration(new Date(System.currentTimeMillis() + expirationMs))
-            .signWith(getSigningKey())
-            .compact();
-    }
+	public String generateToken(User user) {
+		return Jwts.builder().subject(user.getEmail()).claim("role", user.getRole().name())
+				.claim("salonId", user.getSalon().getId()).claim("userId", user.getId()).issuedAt(new Date())
+				.expiration(new Date(System.currentTimeMillis() + expirationMs)).signWith(getSigningKey()).compact();
+	}
 
-    public String extractEmail(String token) {
-        return extractClaim(token, Claims::getSubject);
-    }
+	public String extractEmail(String token) {
+		return extractClaim(token, Claims::getSubject);
+	}
 
-    public Long extractSalonId(String token) {
-        return extractClaim(token, claims -> claims.get("salonId", Long.class));
-    }
+	public Long extractSalonId(String token) {
+		return extractClaim(token, claims -> claims.get("salonId", Long.class));
+	}
 
-    public String extractRole(String token) {
-        return extractClaim(token, claims -> claims.get("role", String.class));
-    }
+	public String extractRole(String token) {
+		return extractClaim(token, claims -> claims.get("role", String.class));
+	}
 
-    public boolean isTokenValid(String token, UserDetails userDetails) {
-        return extractEmail(token).equals(userDetails.getUsername()) && !isTokenExpired(token);
-    }
+	public boolean isTokenValid(String token, UserDetails userDetails) {
+		return extractEmail(token).equals(userDetails.getUsername()) && !isTokenExpired(token);
+	}
 
-    private boolean isTokenExpired(String token) {
-        return extractClaim(token, Claims::getExpiration).before(new Date());
-    }
+	private boolean isTokenExpired(String token) {
+		return extractClaim(token, Claims::getExpiration).before(new Date());
+	}
 
-    private <T> T extractClaim(String token, Function<Claims, T> resolver) {
-        Claims claims = Jwts.parser()
-            .verifyWith(getSigningKey())
-            .build()
-            .parseSignedClaims(token)
-            .getPayload();
-        return resolver.apply(claims);
-    }
+	private <T> T extractClaim(String token, Function<Claims, T> resolver) {
+		Claims claims = Jwts.parser().verifyWith(getSigningKey()).build().parseSignedClaims(token).getPayload();
+		return resolver.apply(claims);
+	}
 
-    private SecretKey getSigningKey() {
-        return Keys.hmacShaKeyFor(Decoders.BASE64.decode(secret));
-    }
+	private SecretKey getSigningKey() {
+		return Keys.hmacShaKeyFor(Decoders.BASE64.decode(secret));
+	}
 }

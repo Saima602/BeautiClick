@@ -1,7 +1,16 @@
 package com.beuticlick.entity;
 
-import jakarta.persistence.*;
-import lombok.*;
+import com.beuticlick.constant.StaffRole;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "staff")
@@ -9,14 +18,20 @@ import lombok.*;
 @Setter
 public class Staff extends BaseSalonEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    private String name;
-    private String phone;
-    private String email;
-    private String role;         // e.g. "Hair Stylist", "Nail Tech", "Manager"
-    private Boolean available;   // whether they are currently taking appointments
+	private String name;
+	private String phone;
+	private String email;
+
+	private Boolean available; // whether they are currently taking appointments
+
+	@Enumerated(EnumType.STRING)
+	private StaffRole role;
+
+	private String specialization;
+	private Integer experienceYears;
 
 }

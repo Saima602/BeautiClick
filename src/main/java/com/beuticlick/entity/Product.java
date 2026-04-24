@@ -22,4 +22,6 @@ public class Product extends BaseSalonEntity {
 	private String brand;
 	private String category;
 	private String unit;
+	private Double costPrice;
+	private Double sellingPrice;
 }

@@ -1,5 +1,7 @@
 package com.beuticlick.entity;
 
+import com.beuticlick.constant.PaymentMode;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,5 +22,8 @@ public class BillingEntity extends BaseSalonEntity {
 
 	private Long customerId;
 	private Double totalAmount;
-	private String paymentMode;
+
+	private Long appointmentId;
+
+	private PaymentMode paymentMode;
 }

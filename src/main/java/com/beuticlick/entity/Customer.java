@@ -1,5 +1,6 @@
 package com.beuticlick.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,7 +18,14 @@ public class Customer extends BaseSalonEntity {
 	private Long id;
 
 	private String name;
+
+	@Column(unique = true)
 	private String phone;
+
 	private String email;
+	private Integer totalVisits;
+	private Double totalSpent;
+
+	private String city;
 
 }
