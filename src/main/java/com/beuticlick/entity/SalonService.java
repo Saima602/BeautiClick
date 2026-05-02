@@ -8,6 +8,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,5 +32,9 @@ public class SalonService extends BaseSalonEntity {
 	private Double price;
 	private Integer durationMinutes; // how long the appointment slot should be
 	private Boolean active; // soft-disable without deleting
+
+	@ManyToOne
+	@JoinColumn(name = "salon_id", insertable = false, updatable = false)
+	private Salon salon;
 
 }

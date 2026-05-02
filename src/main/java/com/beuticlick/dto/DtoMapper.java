@@ -47,13 +47,16 @@ public class DtoMapper {
 		s.setPhone(req.getPhone());
 		s.setEmail(req.getEmail());
 		s.setRole(StaffRole.valueOf(req.getRole()));
+		s.setSpecialization(req.getSpecialization());
+		s.setExperienceYears(req.getExperienceYears());
 		s.setAvailable(req.getAvailable() != null ? req.getAvailable() : true);
 		return s;
 	}
 
 	public static StaffResponse toResponse(Staff s) {
 		return StaffResponse.builder().id(s.getId()).name(s.getName()).phone(s.getPhone()).email(s.getEmail())
-				.role(StaffRole.valueOf(s.getRole().name())).available(s.getAvailable()).build();
+				.role(StaffRole.valueOf(s.getRole().name())).specialization(s.getSpecialization())
+				.experienceYears(s.getExperienceYears()).available(s.getAvailable()).build();
 	}
 
 	// ── SalonService ──────────────────────────────────────────────────────────
@@ -78,17 +81,23 @@ public class DtoMapper {
 
 	public static Appointment toEntity(AppointmentRequest req) {
 		Appointment a = new Appointment();
-		a.setCustomer(req.getCustomer());
-		a.setService(req.getService());
-		a.setStaff(req.getStaff());
-		a.setStartTime(req.getAppointmentTime());
+		a.setStartTime(req.getStartTime());
 		return a;
 	}
 
-	public static AppointmentResponse toResponse(Appointment a) {
-		return AppointmentResponse.builder().id(a.getId()).customer(a.getCustomer()).service(a.getService())
-				.staff(a.getStaff()).appointmentTime(a.getStartTime()).servicePrice(a.getServicePrice())
-				.status(a.getStatus()).build();
-	}
+	
+		public static AppointmentResponse toResponse(Appointment entity) {
+        return AppointmentResponse.builder()
+                .id(entity.getId())
+                .startTime(entity.getStartTime())
+                .endTime(entity.getEndTime())
+                .status(entity.getStatus().name())
+                .staffName(entity.getStaff().getName())
+                .serviceName(entity.getService().getName())
+                .customerName(entity.getCustomer().getName())
+                .notes(entity.getNotes())
+                .build();
+    }
+	
 
 }

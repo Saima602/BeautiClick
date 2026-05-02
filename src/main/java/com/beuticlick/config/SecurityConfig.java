@@ -55,6 +55,10 @@ public class SecurityConfig {
                 .requestMatchers("PATCH", "/appointments/**").hasAnyRole("STAFF", "SALON_ADMIN")
                 .requestMatchers("GET",   "/customers/**").hasAnyRole("STAFF", "SALON_ADMIN")
 
+                // Staff availability and role lookup viewable by staff and salon admin
+                .requestMatchers("GET", "/staff/*/availability").hasAnyRole("STAFF", "SALON_ADMIN")
+                .requestMatchers("GET", "/staff/role/**").hasAnyRole("STAFF", "SALON_ADMIN")
+
                 // Salon admin only
                 .requestMatchers("/staff/**").hasRole("SALON_ADMIN")
                 .requestMatchers("/services/**").hasRole("SALON_ADMIN")

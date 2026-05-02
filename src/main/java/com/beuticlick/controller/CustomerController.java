@@ -26,7 +26,7 @@ public class CustomerController {
     @PostMapping
     public CustomerResponse create(@Valid @RequestBody CustomerRequest request) {
         return DtoMapper.toResponse(
-            service.create(DtoMapper.toEntity(request), SecurityUtils.currentSalonId())
+            service.create(DtoMapper.toEntity(request), request.getSalonCode(), SecurityUtils.currentSalonId())
         );
     }
 

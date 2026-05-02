@@ -1,0 +1,244 @@
+version 2
+JvmtiExport can_access_local_variables 0
+JvmtiExport can_hotswap_or_post_breakpoint 1
+JvmtiExport can_post_on_exceptions 0
+# 253 ciObject found
+instanceKlass org/eclipse/osgi/internal/framework/BundleContextImpl
+ciInstanceKlass java/lang/Cloneable 1 0 7 100 1 100 1 1 1
+instanceKlass java/util/stream/Nodes$ArrayNode
+instanceKlass  @bci sun/util/locale/provider/LocaleProviderAdapter toLocaleArray (Ljava/util/Set;)[Ljava/util/Locale; 16 <appendix> argL0 ; # sun/util/locale/provider/LocaleProviderAdapter$$Lambda+0x800000069
+instanceKlass  @bci sun/util/locale/provider/LocaleProviderAdapter toLocaleArray (Ljava/util/Set;)[Ljava/util/Locale; 6 <appendix> argL0 ; # sun/util/locale/provider/LocaleProviderAdapter$$Lambda+0x800000068
+instanceKlass  @bci sun/util/cldr/CLDRLocaleProviderAdapter getCalendarDataProvider ()Ljava/util/spi/CalendarDataProvider; 8 <appendix> member <vmtarget> ; # sun/util/cldr/CLDRLocaleProviderAdapter$$Lambda+0x800000062
+instanceKlass java/util/ResourceBundle
+instanceKlass java/util/ResourceBundle$Control
+instanceKlass sun/util/locale/provider/CalendarDataUtility$CalendarWeekParameterGetter
+instanceKlass sun/util/locale/provider/LocaleServiceProviderPool$LocalizedObjectGetter
+instanceKlass sun/util/locale/provider/LocaleServiceProviderPool
+instanceKlass java/util/Locale$Builder
+instanceKlass sun/util/locale/provider/CalendarDataUtility
+instanceKlass java/util/Calendar$Builder
+instanceKlass sun/util/locale/provider/AvailableLanguageTags
+instanceKlass  @bci sun/util/locale/provider/JRELocaleProviderAdapter getCalendarProvider ()Lsun/util/spi/CalendarProvider; 8 <appendix> member <vmtarget> ; # sun/util/locale/provider/JRELocaleProviderAdapter$$Lambda+0x800000063
+instanceKlass sun/util/resources/cldr/provider/CLDRLocaleDataMetaInfo
+instanceKlass jdk/internal/module/ModulePatcher$PatchedModuleReader
+instanceKlass  @bci sun/util/cldr/CLDRLocaleProviderAdapter <init> ()V 4 <appendix> argL0 ; # sun/util/cldr/CLDRLocaleProviderAdapter$$Lambda+0x800000061
+instanceKlass sun/util/locale/InternalLocaleBuilder$CaseInsensitiveChar
+instanceKlass sun/util/locale/InternalLocaleBuilder
+instanceKlass sun/util/locale/StringTokenIterator
+instanceKlass sun/util/locale/ParseStatus
+instanceKlass sun/util/locale/LanguageTag
+instanceKlass sun/util/cldr/CLDRBaseLocaleDataMetaInfo
+instanceKlass sun/util/locale/provider/LocaleDataMetaInfo
+instanceKlass sun/util/locale/provider/ResourceBundleBasedAdapter
+instanceKlass sun/util/locale/provider/LocaleProviderAdapter
+instanceKlass java/util/spi/LocaleServiceProvider
+instanceKlass sun/util/calendar/ZoneInfoFile$ZoneOffsetTransitionRule
+instanceKlass sun/util/calendar/ZoneInfoFile$1
+instanceKlass sun/util/calendar/ZoneInfoFile
+instanceKlass java/util/TimeZone
+instanceKlass java/util/Calendar
+instanceKlass org/eclipse/osgi/framework/log/FrameworkLogEntry
+instanceKlass org/eclipse/osgi/internal/log/ExtendedLogEntryImpl
+instanceKlass org/eclipse/equinox/log/ExtendedLogEntry
+instanceKlass org/eclipse/osgi/internal/log/Arguments
+instanceKlass java/lang/StackTraceElement$HashedModules
+instanceKlass org/osgi/util/promise/Promise
+instanceKlass org/osgi/util/promise/PromiseFactory
+instanceKlass org/osgi/util/promise/Promises
+instanceKlass org/apache/felix/scr/impl/inject/ComponentMethods
+instanceKlass org/osgi/service/component/ComponentFactory
+instanceKlass org/apache/felix/scr/impl/manager/AbstractComponentManager
+instanceKlass org/apache/felix/scr/impl/manager/ComponentManager
+instanceKlass org/apache/felix/scr/impl/manager/ConfigurableComponentHolder
+instanceKlass org/apache/felix/scr/impl/manager/ComponentContainer
+instanceKlass org/apache/felix/scr/impl/ComponentRegistryKey
+instanceKlass org/apache/felix/scr/impl/metadata/PropertyMetadata
+instanceKlass org/apache/felix/scr/impl/metadata/ReferenceMetadata
+instanceKlass org/apache/felix/scr/impl/metadata/ServiceMetadata
+instanceKlass org/apache/felix/scr/impl/metadata/ComponentMetadata
+instanceKlass org/apache/felix/scr/impl/xml/XmlConstants
+instanceKlass com/sun/org/apache/xerces/internal/impl/Constants$ArrayEnumeration
+instanceKlass com/sun/org/apache/xerces/internal/impl/Constants
+instanceKlass com/sun/org/apache/xerces/internal/parsers/AbstractSAXParser$LocatorProxy
+instanceKlass org/xml/sax/ext/Locator2
+instanceKlass org/xml/sax/Locator
+instanceKlass com/sun/org/apache/xerces/internal/util/XMLSymbols
+instanceKlass com/sun/org/apache/xerces/internal/util/XMLChar
+instanceKlass com/sun/xml/internal/stream/Entity
+instanceKlass com/sun/xml/internal/stream/util/BufferAllocator
+instanceKlass com/sun/xml/internal/stream/util/ThreadLocalBufferAllocator
+instanceKlass com/sun/org/apache/xerces/internal/impl/XMLEntityManager$EncodingInfo
+instanceKlass com/sun/org/apache/xerces/internal/utils/XMLLimitAnalyzer
+instanceKlass com/sun/org/apache/xerces/internal/xni/parser/XMLInputSource
+instanceKlass com/sun/org/apache/xerces/internal/util/ErrorHandlerWrapper
+instanceKlass com/sun/org/apache/xerces/internal/xni/parser/XMLErrorHandler
+instanceKlass com/sun/org/apache/xerces/internal/impl/ExternalSubsetResolver
+instanceKlass com/sun/org/apache/xerces/internal/util/EntityResolverWrapper
+instanceKlass org/xml/sax/ext/EntityResolver2
+instanceKlass org/xml/sax/InputSource
+instanceKlass com/sun/org/apache/xerces/internal/parsers/AbstractSAXParser$AttributesProxy
+instanceKlass org/xml/sax/ext/Attributes2
+instanceKlass org/xml/sax/Attributes
+instanceKlass org/xml/sax/AttributeList
+instanceKlass com/sun/org/apache/xerces/internal/util/FeatureState
+instanceKlass com/sun/org/apache/xerces/internal/util/PropertyState
+instanceKlass com/sun/org/apache/xerces/internal/impl/msg/XMLMessageFormatter
+instanceKlass com/sun/org/apache/xerces/internal/util/MessageFormatter
+instanceKlass com/sun/org/apache/xerces/internal/impl/XMLVersionDetector
+instanceKlass com/sun/org/apache/xerces/internal/impl/validation/ValidationManager
+instanceKlass com/sun/org/apache/xerces/internal/impl/dv/dtd/NMTOKENDatatypeValidator
+instanceKlass com/sun/org/apache/xerces/internal/impl/dv/dtd/NOTATIONDatatypeValidator
+instanceKlass com/sun/org/apache/xerces/internal/impl/dv/dtd/ENTITYDatatypeValidator
+instanceKlass com/sun/org/apache/xerces/internal/impl/dv/dtd/ListDatatypeValidator
+instanceKlass com/sun/org/apache/xerces/internal/impl/dv/dtd/IDREFDatatypeValidator
+instanceKlass com/sun/org/apache/xerces/internal/impl/dv/dtd/IDDatatypeValidator
+instanceKlass com/sun/org/apache/xerces/internal/impl/dv/dtd/StringDatatypeValidator
+instanceKlass com/sun/org/apache/xerces/internal/impl/dv/DatatypeValidator
+instanceKlass com/sun/org/apache/xerces/internal/impl/dv/DTDDVFactory
+instanceKlass com/sun/org/apache/xerces/internal/impl/dtd/DTDGrammarBucket
+instanceKlass com/sun/org/apache/xerces/internal/impl/dtd/XMLAttributeDecl
+instanceKlass com/sun/org/apache/xerces/internal/impl/dtd/XMLSimpleType
+instanceKlass com/sun/org/apache/xerces/internal/impl/dtd/XMLElementDecl
+instanceKlass com/sun/org/apache/xerces/internal/impl/validation/ValidationState
+instanceKlass com/sun/org/apache/xerces/internal/impl/dv/ValidationContext
+instanceKlass com/sun/org/apache/xerces/internal/impl/dtd/XMLDTDValidator
+instanceKlass com/sun/org/apache/xerces/internal/impl/RevalidationHandler
+instanceKlass com/sun/org/apache/xerces/internal/impl/dtd/XMLDTDValidatorFilter
+instanceKlass com/sun/org/apache/xerces/internal/xni/parser/XMLDocumentFilter
+instanceKlass com/sun/org/apache/xerces/internal/impl/dtd/XMLEntityDecl
+instanceKlass com/sun/org/apache/xerces/internal/impl/dtd/XMLDTDProcessor
+instanceKlass com/sun/org/apache/xerces/internal/xni/parser/XMLDTDContentModelFilter
+instanceKlass com/sun/org/apache/xerces/internal/xni/parser/XMLDTDFilter
+instanceKlass com/sun/org/apache/xerces/internal/xni/parser/XMLDTDScanner
+instanceKlass com/sun/org/apache/xerces/internal/xni/parser/XMLDTDContentModelSource
+instanceKlass com/sun/org/apache/xerces/internal/xni/parser/XMLDTDSource
+instanceKlass com/sun/org/apache/xerces/internal/xni/grammars/XMLDTDDescription
+instanceKlass com/sun/org/apache/xerces/internal/xni/grammars/XMLGrammarDescription
+instanceKlass com/sun/org/apache/xerces/internal/impl/XMLDocumentScannerImpl$TrailingMiscDriver
+instanceKlass com/sun/org/apache/xerces/internal/impl/XMLDocumentScannerImpl$PrologDriver
+instanceKlass com/sun/org/apache/xerces/internal/impl/XMLDocumentScannerImpl$XMLDeclDriver
+instanceKlass com/sun/org/apache/xerces/internal/util/NamespaceSupport
+instanceKlass com/sun/org/apache/xerces/internal/xni/NamespaceContext
+instanceKlass com/sun/org/apache/xerces/internal/util/XMLAttributesImpl$Attribute
+instanceKlass com/sun/org/apache/xerces/internal/util/XMLAttributesImpl
+instanceKlass com/sun/org/apache/xerces/internal/xni/XMLAttributes
+instanceKlass com/sun/org/apache/xerces/internal/impl/XMLDocumentFragmentScannerImpl$FragmentContentDriver
+instanceKlass com/sun/org/apache/xerces/internal/impl/XMLDocumentFragmentScannerImpl$Driver
+instanceKlass com/sun/org/apache/xerces/internal/impl/XMLDocumentFragmentScannerImpl$ElementStack2
+instanceKlass com/sun/org/apache/xerces/internal/xni/QName
+instanceKlass com/sun/org/apache/xerces/internal/impl/XMLDocumentFragmentScannerImpl$ElementStack
+instanceKlass com/sun/org/apache/xerces/internal/xni/XMLString
+instanceKlass com/sun/org/apache/xerces/internal/impl/XMLScanner
+instanceKlass com/sun/xml/internal/stream/XMLBufferListener
+instanceKlass com/sun/org/apache/xerces/internal/impl/XMLEntityHandler
+instanceKlass com/sun/org/apache/xerces/internal/xni/parser/XMLDocumentScanner
+instanceKlass com/sun/org/apache/xerces/internal/xni/parser/XMLDocumentSource
+instanceKlass com/sun/org/apache/xerces/internal/impl/XMLErrorReporter
+instanceKlass com/sun/org/apache/xerces/internal/impl/XMLEntityScanner
+instanceKlass com/sun/org/apache/xerces/internal/xni/XMLLocator
+instanceKlass com/sun/xml/internal/stream/XMLEntityStorage
+instanceKlass com/sun/org/apache/xerces/internal/util/AugmentationsImpl$AugmentationsItemsContainer
+instanceKlass com/sun/org/apache/xerces/internal/util/AugmentationsImpl
+instanceKlass com/sun/org/apache/xerces/internal/xni/Augmentations
+instanceKlass com/sun/org/apache/xerces/internal/util/XMLResourceIdentifierImpl
+instanceKlass com/sun/org/apache/xerces/internal/xni/XMLResourceIdentifier
+instanceKlass com/sun/org/apache/xerces/internal/impl/XMLEntityManager
+instanceKlass com/sun/org/apache/xerces/internal/xni/parser/XMLEntityResolver
+instanceKlass com/sun/org/apache/xerces/internal/xni/parser/XMLComponent
+instanceKlass com/sun/org/apache/xerces/internal/util/SymbolTable$Entry
+instanceKlass com/sun/org/apache/xerces/internal/util/SymbolTable
+instanceKlass jdk/xml/internal/JdkConstants
+instanceKlass jdk/xml/internal/JdkXmlUtils
+instanceKlass com/sun/org/apache/xerces/internal/util/ParserConfigurationSettings
+instanceKlass com/sun/org/apache/xerces/internal/parsers/XML11Configurable
+instanceKlass com/sun/org/apache/xerces/internal/xni/parser/XMLPullParserConfiguration
+instanceKlass com/sun/org/apache/xerces/internal/xni/parser/XMLParserConfiguration
+instanceKlass com/sun/org/apache/xerces/internal/xni/parser/XMLComponentManager
+instanceKlass com/sun/org/apache/xerces/internal/parsers/XMLParser
+instanceKlass com/sun/org/apache/xerces/internal/xni/XMLDTDContentModelHandler
+instanceKlass com/sun/org/apache/xerces/internal/xni/XMLDTDHandler
+instanceKlass com/sun/org/apache/xerces/internal/xni/XMLDocumentHandler
+instanceKlass org/xml/sax/XMLReader
+instanceKlass org/xml/sax/Parser
+instanceKlass com/sun/org/apache/xerces/internal/utils/XMLSecurityPropertyManager
+instanceKlass com/sun/org/apache/xerces/internal/utils/XMLSecurityManager
+instanceKlass javax/xml/parsers/SAXParser
+instanceKlass com/sun/org/apache/xerces/internal/xs/PSVIProvider
+instanceKlass com/sun/org/apache/xerces/internal/jaxp/JAXPConstants
+instanceKlass  @bci javax/xml/parsers/FactoryFinder newInstance (Ljava/lang/Class;Ljava/lang/String;Ljava/lang/ClassLoader;ZZ)Ljava/lang/Object; 104 <appendix> member <vmtarget> ; # javax/xml/parsers/FactoryFinder$$Lambda+0x000001f8b20d1708
+instanceKlass  @bci jdk/xml/internal/SecuritySupport getContextClassLoader ()Ljava/lang/ClassLoader; 0 <appendix> argL0 ; # jdk/xml/internal/SecuritySupport$$Lambda+0x000001f8b20d1280
+instanceKlass  @bci javax/xml/parsers/FactoryFinder find (Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object; 104 <appendix> member <vmtarget> ; # javax/xml/parsers/FactoryFinder$$Lambda+0x000001f8b20d1058
+instanceKlass javax/xml/parsers/FactoryFinder$1
+instanceKlass  @bci jdk/xml/internal/SecuritySupport getFileInputStream (Ljava/io/File;)Ljava/io/FileInputStream; 1 <appendix> member <vmtarget> ; # jdk/xml/internal/SecuritySupport$$Lambda+0x000001f8b20d0c00
+instanceKlass  @bci jdk/xml/internal/SecuritySupport doesFileExist (Ljava/io/File;)Z 1 <appendix> member <vmtarget> ; # jdk/xml/internal/SecuritySupport$$Lambda+0x000001f8b20d09d8
+instanceKlass  @bci javax/xml/parsers/FactoryFinder find (Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object; 6 <appendix> member <vmtarget> ; # javax/xml/parsers/FactoryFinder$$Lambda+0x000001f8b20d07b0
+instanceKlass  @bci jdk/xml/internal/SecuritySupport getSystemProperty (Ljava/lang/String;)Ljava/lang/String; 1 <appendix> member <vmtarget> ; # jdk/xml/internal/SecuritySupport$$Lambda+0x000001f8b20d0588
+instanceKlass jdk/xml/internal/SecuritySupport
+instanceKlass javax/xml/parsers/FactoryFinder
+instanceKlass javax/xml/parsers/SAXParserFactory
+instanceKlass  @bci org/eclipse/osgi/storage/Storage lambda$7 (Ljava/util/List;Ljava/lang/String;)Ljava/util/stream/Stream; 7 <appendix> member <vmtarget> ; # org/eclipse/osgi/storage/Storage$$Lambda+0x000001f8b21304a0
+instanceKlass org/eclipse/osgi/internal/container/InternalUtils$1
+instanceKlass  @bci org/eclipse/osgi/storage/Storage findEntries (Ljava/util/List;Ljava/lang/String;Ljava/lang/String;I)Ljava/util/Enumeration; 101 <appendix> argL0 ; # org/eclipse/osgi/storage/Storage$$Lambda+0x000001f8b2130000
+instanceKlass  @bci org/eclipse/osgi/storage/Storage findEntries (Ljava/util/List;Ljava/lang/String;Ljava/lang/String;I)Ljava/util/Enumeration; 91 <appendix> member <vmtarget> ; # org/eclipse/osgi/storage/Storage$$Lambda+0x000001f8b212a400
+instanceKlass org/xml/sax/helpers/DefaultHandler
+instanceKlass org/xml/sax/ErrorHandler
+instanceKlass org/xml/sax/ContentHandler
+instanceKlass org/xml/sax/DTDHandler
+instanceKlass org/xml/sax/EntityResolver
+instanceKlass org/apache/felix/scr/impl/BundleComponentActivator
+instanceKlass org/apache/felix/scr/impl/manager/ComponentActivator
+instanceKlass org/apache/felix/scr/impl/manager/ExtendedServiceListenerContext
+instanceKlass java/util/AbstractList$Itr
+instanceKlass org/eclipse/core/internal/runtime/IAdapterFactoryExt
+instanceKlass org/eclipse/core/internal/runtime/AdapterFactoryBridge$LazyAdapterFactory
+instanceKlass org/eclipse/core/internal/runtime/AdapterFactoryBridge
+instanceKlass org/eclipse/core/runtime/IAdapterFactory
+instanceKlass org/eclipse/core/internal/runtime/TracingOptions$1
+instanceKlass org/eclipse/core/internal/runtime/TracingOptions
+instanceKlass java/util/AbstractMap$1$1
+instanceKlass org/osgi/service/url/URLStreamHandlerService
+instanceKlass  @bci org/eclipse/core/runtime/ServiceCaller current ()Ljava/util/Optional; 4 <appendix> argL0 ; # org/eclipse/core/runtime/ServiceCaller$$Lambda+0x000001f8b2129928
+instanceKlass  @bci org/eclipse/core/runtime/ServiceCaller$ReferenceAndService track ()Ljava/util/Optional; 45 <appendix> argL2 form vmentry <vmtarget> ; # java/lang/invoke/LambdaForm$MH+0x000001f8b212a000
+instanceKlass  @bci org/eclipse/core/runtime/ServiceCaller trackCurrent ()Ljava/util/Optional; 19 <appendix> member <vmtarget> ; # org/eclipse/core/runtime/ServiceCaller$$Lambda+0x000001f8b21296e0
+instanceKlass  @bci org/eclipse/core/runtime/ServiceCaller getCurrent ()Ljava/util/Optional; 12 <appendix> member <vmtarget> ; # org/eclipse/core/runtime/ServiceCaller$$Lambda+0x000001f8b2129498
+instanceKlass sun/invoke/util/VerifyAccess$1
+instanceKlass org/eclipse/core/runtime/ServiceCaller$ReferenceAndService
+instanceKlass java/util/concurrent/ConcurrentLinkedQueue$Node
+instanceKlass org/eclipse/core/internal/runtime/AdapterManager
+instanceKlass org/eclipse/core/runtime/IAdapterManager
+instanceKlass org/eclipse/core/internal/runtime/PlatformURLConverter
+instanceKlass org/eclipse/core/internal/runtime/RuntimeLog
+instanceKlass org/eclipse/core/runtime/IStatus
+instanceKlass org/eclipse/core/internal/runtime/PlatformLogWriter
+instanceKlass org/eclipse/osgi/internal/log/ExtendedLogReaderServiceImpl
+instanceKlass  @bci org/eclipse/core/runtime/ServiceCaller <init> (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)V 39 <appendix> argL0 ; # org/eclipse/core/runtime/ServiceCaller$$Lambda+0x000001f8b2123000
+instanceKlass  @bci org/osgi/framework/FrameworkUtil getBundle (Ljava/lang/Class;)Lorg/osgi/framework/Bundle; 26 <appendix> member <vmtarget> ; # org/osgi/framework/FrameworkUtil$$Lambda+0x000001f8b211bca8
+instanceKlass  @bci org/osgi/framework/FrameworkUtil getBundle (Ljava/lang/Class;)Lorg/osgi/framework/Bundle; 17 <appendix> argL0 ; # org/osgi/framework/FrameworkUtil$$Lambda+0x000001f8b211ba68
+instanceKlass  @bci org/osgi/framework/FrameworkUtil getBundle (Ljava/lang/Class;)Lorg/osgi/framework/Bundle; 1 <appendix> member <vmtarget> ; # org/osgi/framework/FrameworkUtil$$Lambda+0x000001f8b211b840
+instanceKlass  @bci org/osgi/framework/FrameworkUtil <clinit> ()V 27 <appendix> member <vmtarget> ; # org/osgi/framework/FrameworkUtil$$Lambda+0x000001f8b211b608
+instanceKlass org/osgi/framework/connect/FrameworkUtilHelper
+instanceKlass  @bci org/osgi/framework/FrameworkUtil <clinit> ()V 8 <appendix> argL0 ; # org/osgi/framework/FrameworkUtil$$Lambda+0x000001f8b211b1e8
+instanceKlass  @bci org/eclipse/core/runtime/ServiceCaller <init> (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)V 31 <appendix> argL0 ; # org/eclipse/core/runtime/ServiceCaller$$Lambda+0x000001f8b2122ca8
+instanceKlass org/osgi/framework/FrameworkUtil
+instanceKlass org/eclipse/core/runtime/ServiceCaller
+instanceKlass org/eclipse/core/internal/runtime/Activator
+instanceKlass org/apache/felix/scr/impl/config/ScrMetaTypeProviderServiceFactory
+instanceKlass org/apache/felix/scr/impl/config/ScrManagedServiceServiceFactory
+instanceKlass org/apache/felix/scr/impl/ComponentCommands$2
+instanceKlass org/apache/felix/scr/impl/ComponentCommands$1
+instanceKlass org/apache/felix/scr/impl/ComponentCommands
+instanceKlass org/eclipse/osgi/storage/ManifestLocalization$BundleResourceBundle
+instanceKlass org/eclipse/osgi/storage/ManifestLocalization
+instanceKlass org/apache/felix/scr/impl/Activator$ScrExtension
+instanceKlass org/apache/felix/scr/impl/runtime/ServiceComponentRuntimeImpl
+instanceKlass org/apache/felix/scr/impl/manager/RegionConfigurationSupport
+instanceKlass org/apache/felix/scr/impl/manager/ComponentHolder
+instanceKlass org/apache/felix/scr/impl/ComponentRegistry
+instanceKlass org/apache/felix/scr/impl/ComponentActorExecutor$1
+instanceKlass org/osgi/util/tracker/BundleTracker
+instanceKlass org/apache/felix/scr/impl/logger/ScrLogManager$1
+instanceKlass org/apache/felix/scr/impl/logger/LogManager$LogDomain
+instanceKlass org/apache/felix/scr/impl/logger/LogManager$Lock
+instanceKlass org/apache/felix/scr/impl/logger/LogManager$LoggerFacade
+instanceKlass org/apache/felix/scr/impl/logger/BundleLogger
+instanceKlass org/apache/felix/scr/impl/logger/ComponentLogger

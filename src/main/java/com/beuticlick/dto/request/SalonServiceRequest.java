@@ -27,4 +27,6 @@ public class SalonServiceRequest {
     @Min(value = 5, message = "Duration must be at least 5 minutes")
     private Integer durationMinutes;
 
+    private String salonCode;
+
 }

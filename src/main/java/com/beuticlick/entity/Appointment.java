@@ -10,37 +10,42 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
-@Table(name = "appointments")
+
 @Getter
 @Setter
-public class Appointment extends BaseSalonEntity {
+@Entity
+@Table(name = "appointment")
+public class Appointment {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	@ManyToOne
-	private Customer customer;
+    private LocalDateTime startTime;
+    private LocalDateTime endTime;
 
-	@ManyToOne
-	private Staff staff;
+    @Enumerated(EnumType.STRING)
+    private StatusEnum status;
 
-	@ManyToOne
-	private SalonService service;
+    private String notes;
 
-	private LocalDateTime startTime;
-	private LocalDateTime endTime;
+    // relationships
+    @ManyToOne
+    private Staff staff;
 
-	// Captured at booking time so billing is always accurate even if price changes
-	// later
-	private Double servicePrice;
+    @ManyToOne
+    private SalonService service;
 
-	@Enumerated(EnumType.STRING)
-	private StatusEnum status;
+    @ManyToOne
+    private Customer customer;
+
+    @ManyToOne
+    @JoinColumn(name = "salon_id")
+    private Salon salon;
 }

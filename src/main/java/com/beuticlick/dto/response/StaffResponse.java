@@ -13,5 +13,7 @@ public class StaffResponse {
 	private String phone;
 	private String email;
 	private StaffRole role;
+	private String specialization;
+	private Integer experienceYears;
 	private Boolean available;
 }

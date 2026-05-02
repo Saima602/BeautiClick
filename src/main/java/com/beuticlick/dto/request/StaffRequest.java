@@ -23,6 +23,9 @@ public class StaffRequest {
     @NotBlank(message = "Role is required")
     private String role;
 
+    private String specialization;
+    private Integer experienceYears;
+
     private Boolean available;
 
 }

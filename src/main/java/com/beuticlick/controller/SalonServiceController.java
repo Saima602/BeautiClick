@@ -26,7 +26,7 @@ public class SalonServiceController {
     @PostMapping
     public SalonServiceResponse create(@Valid @RequestBody SalonServiceRequest request) {
         return DtoMapper.toResponse(
-            service.create(DtoMapper.toEntity(request), SecurityUtils.currentSalonId())
+            service.create(DtoMapper.toEntity(request), request.getSalonCode(), SecurityUtils.currentSalonId())
         );
     }
 

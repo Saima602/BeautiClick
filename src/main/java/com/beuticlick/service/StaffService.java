@@ -3,7 +3,9 @@ package com.beuticlick.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.beuticlick.constant.StaffRole;
 import com.beuticlick.entity.Staff;
 import com.beuticlick.repository.StaffRepository;
 
@@ -29,6 +31,10 @@ public class StaffService {
         return repository.findBySalonIdAndAvailable(salonId, true);
     }
 
+    public List<Staff> getByRole(Long salonId, String role) {
+        return repository.findBySalonIdAndRole(salonId, StaffRole.valueOf(role));
+    }
+
     public Staff getById(Long id, Long salonId) {
         Staff staff = repository.findById(id)
             .orElseThrow(() -> new RuntimeException("Staff not found: " + id));
@@ -38,13 +44,30 @@ public class StaffService {
         return staff;
     }
 
+    public Boolean isAvailable(Long id, Long salonId) {
+        return getById(id, salonId).getAvailable();
+    }
+
+    @Transactional
     public Staff update(Long id, Staff updated, Long salonId) {
         Staff existing = getById(id, salonId);
+        // Always update required fields
         existing.setName(updated.getName());
         existing.setPhone(updated.getPhone());
-        existing.setEmail(updated.getEmail());
         existing.setRole(updated.getRole());
-        existing.setAvailable(updated.getAvailable());
+        // Only update optional fields if provided (not null)
+        if (updated.getEmail() != null) {
+            existing.setEmail(updated.getEmail());
+        }
+        if (updated.getSpecialization() != null) {
+            existing.setSpecialization(updated.getSpecialization());
+        }
+        if (updated.getExperienceYears() != null) {
+            existing.setExperienceYears(updated.getExperienceYears());
+        }
+        if (updated.getAvailable() != null) {
+            existing.setAvailable(updated.getAvailable());
+        }
         return repository.save(existing);
     }
 

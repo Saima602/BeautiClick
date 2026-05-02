@@ -15,17 +15,18 @@ import lombok.Setter;
 @Setter
 public class AppointmentRequest {
 
-	@NotNull(message = "Customer ID is required")
-	private Customer customer;
+	 @NotNull
+    private Long staffId;
 
-	@NotNull(message = "Service ID is required")
-	private SalonService service;
+    @NotNull
+    private Long serviceId;
 
-	@NotNull(message = "Staff ID is required")
-	private Staff staff;
+    @NotNull
+    private Long customerId;
 
-	@NotNull(message = "Appointment time is required")
-	@Future(message = "Appointment time must be in the future")
-	private LocalDateTime appointmentTime;
+    @NotNull
+    private LocalDateTime startTime;
+
+    private String notes;
 
 }

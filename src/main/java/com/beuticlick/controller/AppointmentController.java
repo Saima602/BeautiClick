@@ -1,13 +1,13 @@
 package com.beuticlick.controller;
 
+import java.time.LocalDate;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.web.bind.annotation.*;
 
-import com.beuticlick.dto.DtoMapper;
 import com.beuticlick.dto.request.AppointmentRequest;
 import com.beuticlick.dto.response.AppointmentResponse;
+import com.beuticlick.dto.AppointmentMapper;
 import com.beuticlick.security.SecurityUtils;
 import com.beuticlick.service.AppointmentService;
 
@@ -16,44 +16,60 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@SecurityRequirement(name = "bearerAuth")
 @RequestMapping("/appointments")
 @RequiredArgsConstructor
+@SecurityRequirement(name = "bearerAuth")
 public class AppointmentController {
 
     private final AppointmentService service;
 
+    // ✅ Create Appointment
     @PostMapping
-    public AppointmentResponse book(@Valid @RequestBody AppointmentRequest request) {
-        return DtoMapper.toResponse(
-            service.book(DtoMapper.toEntity(request), SecurityUtils.currentSalonId())
+    public AppointmentResponse create(@Valid @RequestBody AppointmentRequest request) {
+        return AppointmentMapper.toResponse(
+                service.book(request, SecurityUtils.currentSalonId())
         );
     }
 
+    // ✅ Get All Appointments (for current salon)
     @GetMapping
     public List<AppointmentResponse> getAll() {
-        return service.getAll(SecurityUtils.currentSalonId()).stream()
-            .map(DtoMapper::toResponse).collect(Collectors.toList());
+        return service.getAll(SecurityUtils.currentSalonId())
+                .stream()
+                .map(AppointmentMapper::toResponse)
+                .toList();
     }
 
+    // ✅ Get by ID
     @GetMapping("/{id}")
     public AppointmentResponse getById(@PathVariable Long id) {
-        return DtoMapper.toResponse(service.getById(id, SecurityUtils.currentSalonId()));
+        return AppointmentMapper.toResponse(
+                service.getById(id, SecurityUtils.currentSalonId())
+        );
     }
 
-    @GetMapping("/customer/{customerId}")
-    public List<AppointmentResponse> getByCustomer(@PathVariable Long customerId) {
-        return service.getByCustomer(customerId, SecurityUtils.currentSalonId()).stream()
-            .map(DtoMapper::toResponse).collect(Collectors.toList());
+    // ✅ Get appointments by date
+    @GetMapping("/date")
+    public List<AppointmentResponse> getByDate(@RequestParam LocalDate date) {
+        return service.getByDate(date, SecurityUtils.currentSalonId())
+                .stream()
+                .map(AppointmentMapper::toResponse)
+                .toList();
     }
 
-    @PatchMapping("/{id}/complete")
-    public void complete(@PathVariable Long id) {
-        service.completeAppointment(id, SecurityUtils.currentSalonId());
-    }
-
+    // ❌ Cancel Appointment
     @PatchMapping("/{id}/cancel")
     public AppointmentResponse cancel(@PathVariable Long id) {
-        return DtoMapper.toResponse(service.cancel(id, SecurityUtils.currentSalonId()));
+        return AppointmentMapper.toResponse(
+                service.cancel(id, SecurityUtils.currentSalonId())
+        );
+    }
+
+    // ✅ Complete Appointment
+    @PatchMapping("/{id}/complete")
+    public AppointmentResponse complete(@PathVariable Long id) {
+        return AppointmentMapper.toResponse(
+                service.complete(id, SecurityUtils.currentSalonId())
+        );
     }
 }

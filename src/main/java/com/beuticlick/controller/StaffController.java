@@ -42,9 +42,20 @@ public class StaffController {
             .map(DtoMapper::toResponse).collect(Collectors.toList());
     }
 
+    @GetMapping("/role/{role}")
+    public List<StaffResponse> getByRole(@PathVariable String role) {
+        return service.getByRole(SecurityUtils.currentSalonId(), role).stream()
+            .map(DtoMapper::toResponse).collect(Collectors.toList());
+    }
+
     @GetMapping("/{id}")
     public StaffResponse getById(@PathVariable Long id) {
         return DtoMapper.toResponse(service.getById(id, SecurityUtils.currentSalonId()));
+    }
+
+    @GetMapping("/{id}/availability")
+    public Boolean getAvailability(@PathVariable Long id) {
+        return service.isAvailable(id, SecurityUtils.currentSalonId());
     }
 
     @PutMapping("/{id}")

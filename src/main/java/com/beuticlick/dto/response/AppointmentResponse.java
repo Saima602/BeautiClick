@@ -13,11 +13,16 @@ import lombok.Getter;
 @Getter
 @Builder
 public class AppointmentResponse {
-	private Long id;
-	private Customer customer;
-	private SalonService service;
-	private Staff staff;
-	private LocalDateTime appointmentTime;
-	private Double servicePrice;
-	private StatusEnum status;
+	 private Long id;
+
+    private LocalDateTime startTime;
+    private LocalDateTime endTime;
+
+    private String status;
+
+    private String staffName;
+    private String serviceName;
+    private String customerName;
+
+    private String notes;
 }
