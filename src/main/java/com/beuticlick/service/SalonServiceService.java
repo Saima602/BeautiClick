@@ -15,8 +15,9 @@ public class SalonServiceService {
 
     private final SalonServiceRepository repository;
 
-    public SalonService create(SalonService salonService, Long salonId) {
+    public SalonService create(SalonService salonService, String salonCode,Long salonId) {
         salonService.setSalonId(salonId);
+        salonService.setSalonCode(salonCode);
         salonService.setActive(true); // new services are active by default
         return repository.save(salonService);
     }

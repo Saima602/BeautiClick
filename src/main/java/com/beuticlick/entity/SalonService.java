@@ -37,4 +37,6 @@ public class SalonService extends BaseSalonEntity {
 	@JoinColumn(name = "salon_id", insertable = false, updatable = false)
 	private Salon salon;
 
+	private String salonCode;
+
 }
